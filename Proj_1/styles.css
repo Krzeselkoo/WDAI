@@ -22,7 +22,7 @@ body{
     width: 100%;
     height: 10rem;
     background: rgb(255,255,255);
-    background: linear-gradient(90deg, white 40%, #00B4D8 100%);
+    background: linear-gradient(90deg, white 45%, #00B4D8 100%);
     padding: 2rem;
 }
 
@@ -34,6 +34,8 @@ body{
 .nav-flex{
     padding: 4.8rem 0;
     position: sticky;
+    top: 0;
+    backdrop-filter: blur(7px);
     height: 5rem;
     display: flex;
     flex-direction: row;
@@ -58,6 +60,7 @@ body{
 .nav-btn:hover{
     background-color: #33c3e0;
     color: white;
+    box-shadow: 4px 4px 18px 2px rgba(0,0,0,0.4);
 }
 
 .nav-btn:active{
@@ -69,7 +72,6 @@ body{
 .hero-section{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 100rem;
     align-items: center;
     justify-content: center;
 
@@ -87,7 +89,7 @@ body{
     height: 100%;
     width: 100%;
     object-fit: cover;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 40%, #ffffff 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 45%, #ffffff 100%);
 }
 
 .hero-text-container{
@@ -106,17 +108,25 @@ body{
     font-size: 4.8rem;
 }
 
+.header-text-section-container{
+    padding: 8rem;
+    text-align: center; 
+}
+
+.who-section-header{
+    font-size: 6.4rem;
+}
+
 .who-section{
     display: flex;
-    height: 100rem;
-    padding: 12rem;
+    padding: 4rem;
     flex-direction: row;
     justify-content: space-around;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, #00B4D8  100%);
 }
 
 .ceo-container{
     text-align: center;
-    height: 50rem;
     /* background-color: #0090ad; */
 }
 
@@ -125,8 +135,46 @@ body{
     margin-bottom: 2.4rem;
     width: 42rem;
     height: 42rem;
+    box-shadow: 4px 4px 24px 2px rgba(0,0,0,0.7);
 }
 
 .ceo-name{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 6rem;
+}
 
+.ceo-description{
+    font-style: italic;
+}
+
+.offer-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.offer-img-div{
+    height: 100%;
+    width: 100%;
+    background-image: url("img/offerimg.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+.offer-text-container{
+    padding: 20rem;
+    text-align: center;
+    color: #222;
+}
+
+.offer-text{
+    margin-bottom: 6rem;
+    font-size: 4.8rem;
+}
+
+.gradient-reverse{
+    height: 100%;
+    background: linear-gradient(90deg, white 20%,rgba(255, 255, 255, 0) 100%);
 }
