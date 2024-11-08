@@ -12,7 +12,7 @@
 <body>
     <header>
         <section class = "header-section">
-            <img class = "logo" src="img/logo.png" alt="logo">
+            <a href = "index.html"><img class = "logo" src="img/logo.png" alt="logo"></a>
             <nav class = "nav-flex">
                 <a class="nav-btn" href="index.html">Home</a>
                 <a class="nav-btn" href="gallery.html">Gallery</a>
@@ -21,7 +21,30 @@
         </section>
     </header>
     <main>
-        <h1>Contact</h1>
-    </main> 
+        <section class="form-section">
+            <div class="form-div">
+                <form>
+                    <label class="label" for="email">Email: </label><br>
+                    <input type="text" id="email"><br>
+                    <label class="label" for="select">Topic: </label><br>
+                    <select id="select">
+                        <option value="uno">Adoption!</option>
+                        <option value="dos">Go for a walk!</option>
+                        <option value="tres">Other</option>
+                    </select><br>
+                    <label class="label" for="email">Message: </label><br>
+                    <textarea rows="5" cols="50" id="message"></textarea><br>
+                    <input type="submit">
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"> 
+        <section class="footer-section">
+            <a href = "index.html"><img class = "logo" src="img/logo.png" alt="logo"></a>
+            <p class="footer-text">The site is a project.</p>
+            <a class="footer-link" href="https://github.com/Krzeselkoo" target="_blank">My Github Page</a>
+        </section>
+    </footer>
 </body>
 </html>

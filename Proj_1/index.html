@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></head>
 <body>
-    <header>
+    <header class="header">
         <section class = "header-section">
-            <img class = "logo" src="img/logo.png" alt="logo">
+            <a href = "index.html"><img class = "logo" src="img/logo.png" alt="logo"></a>
             <nav class = "nav-flex">
                 <a class="nav-btn" href="index.html">Home</a>
                 <a class="nav-btn" href="gallery.html">Gallery</a>
@@ -30,10 +30,9 @@
                 <!-- <p class="hero-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quo nemo, debitis deleniti sed soluta molestiae tempore. Et beatae numquam quod nesciunt maiores laudantium sint soluta placeat. Tenetur, laudantium veritatis?</p> -->
             </div>
         </section>
-        <section class="header-text-section-container">
+        <div class="header-text-section-container">
             <h2 class="who-section-header">Who are we?</h2>
-        </section>
-        
+        </div>
         <section class="who-section">
             <div class="ceo-container">
                 <img class="ceo-img" src="img/caretaker.png" alt="ceo2">
@@ -46,9 +45,9 @@
                 <p class="ceo-description">Manager, Vet</p>
             </div>
         </section>
-        <section class="header-text-section-container">
+        <div class="header-text-section-container">
             <h2 class="who-section-header">What is our mission?</h2>
-        </section>
+        </div>
         <section class="mission-section">
             <div class="mission-text-container">
                 <h2 class="mission-text-title">
@@ -62,10 +61,34 @@
                 <div class="gradient-reverse"></div>
             </div>
         </section>
-        <section>
-        </section>
+        <div class="two-sections">
+            <section class="gallery-section">
+                <div class="header-text-section-container">
+                    <h2 class="who-section-header">Gallery?</h2>
+                </div>
+                <div class="gallery-items">
+                    <p class="gallery-text">Check out some of our furry friends in the gallery section below!</p>
+                    <a class="btn-bottom" href="gallery.html">Gallery</a>
+                </div>
+            </section>
+            <section class="contact-section">
+                <div class="header-text-section-container">
+                    <h2 class="who-section-header">Contact?</h2>
+                </div>
+                <div class="contact-items">
+                    <p class="contact-text">If you are thinking of adoption or want to take a puppy for a walk, fill our form and we will contact to you to schedule a meeting!</p>
+                    <a class="btn-bottom" href="contact.html">Contact us</a>
+                </div>
+            </section>
+        </div>
         <!-- <h2 id="Kontakt">Kontakt</h2> -->
     </main>
-    <footer></footer>
+    <footer class="footer"> 
+        <section class="footer-section">
+            <a href = "index.html"><img class = "logo" src="img/logo.png" alt="logo"></a>
+            <p class="footer-text">The site is a project.</p>
+            <a class="footer-link" href="https://github.com/Krzeselkoo" target="_blank">My Github Page</a>
+        </section>
+    </footer>
 </body>
 </html>

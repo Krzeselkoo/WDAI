@@ -18,16 +18,20 @@ body{
     font-size: 2rem;
 }
 
-section{
+header, section, .two-sections, .header-text-section-container{
     max-width: 260rem;
     margin: 0 auto;
+}
+
+.header{
+    position: sticky;
+    top: 0;
+    box-shadow: 4px 4px 24px 2px rgba(24,55,1,0.7);
 }
 
 .header-section{
     width: 100%;
     height: 10rem;
-    position: relative;
-    top: 0;
     background: #245501;
     display: flex;
     flex-direction: row;
@@ -79,7 +83,7 @@ section{
 
 .hero-section{
     display: grid;
-    height: 100rem;
+    min-height: calc(100vh - 10rem);
     background-color: white;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -88,8 +92,7 @@ section{
 }
 
 .hero-img-div{
-    height: 100rem;
-    max-height: 100rem;
+    height: 100%;
     background-image: url("img/hero-picture.jpg");
     background-size: cover;
     background-position: center;
@@ -132,12 +135,12 @@ section{
 .who-section-header{
     font-size: 6.4rem;
     color: white;
+
 }
 
 .who-section{
-    
     display: flex;
-    padding: 4rem;
+    padding: 12rem 0;
     flex-direction: row;
     justify-content: space-around;
 }
@@ -167,7 +170,6 @@ section{
 }
 
 .mission-section{
-    height: 110rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -182,8 +184,6 @@ section{
 }
 
 .mission-text-container{
-    height: 100rem;
-    max-height: 100rem;
     padding: 20rem 12rem;
     text-align: center;
     color: #245501;
@@ -201,5 +201,121 @@ section{
 
 .gradient-reverse{
     height: 100%;
-    background: linear-gradient(90deg,white 1%,rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(90deg,white 1%,rgba(0, 0, 0, 0) 50%);
 }
+
+.two-sections{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-section{
+    width: 100%;
+}
+
+.contact-items{
+    font-size: 4.8rem;
+    padding: 32rem 24rem;
+    text-align: center;
+    background-color: #1d4401;
+    /* background: url("img/dog-contact.jpg");
+    background-size: cover; */
+    height: calc(100% - 23.5rem);
+}
+
+.contact-text{
+    color:#ffffff
+}
+
+.gallery-section{
+    width: 100%;
+}
+
+.gallery-items{
+    font-size: 4.8rem;
+    padding: 32rem 24rem;
+    text-align: center;
+    background-color: #1d4401;
+    height: calc(100% - 23.5rem);
+    border: 1px solid #1d4401;
+}
+
+.gallery-text{
+    color:#ffffff;
+}
+
+
+.btn-bottom{
+    min-width: 14rem;
+    background: white;
+    color: #245501;
+    margin-top: 12rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 4.8rem;
+    padding: 1rem 2.4rem;
+    margin-right: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.btn-bottom:hover{
+    background-color: #245501;
+    color: white;
+    box-shadow: 4px 4px 18px 2px rgba(0,0,0,0.4);
+}
+
+.btn-bottom:active{
+    background-color: #1d4401;
+    color: white;
+    transition: none;
+}
+
+.footer-section{
+    height: 14rem;
+    background-color: #245501;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-text{
+    font-weight: 500;
+}
+
+.footer-link{
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+}
+
+/* 
+
+Contact page
+
+*/
+
+input {
+    padding-top: 0;
+    padding-left: 0;
+ }
+
+.form-section{
+    background-color: #1d4401;
+    
+}
+
+.form-div{
+    height: calc(100vh - 24rem);
+    width: 50%;
+    margin: 0 0 0 47%;
+}
+
+.label{
+    color: white;
+}
+
