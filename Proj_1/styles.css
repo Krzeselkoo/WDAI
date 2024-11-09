@@ -322,8 +322,9 @@ Contact page
 }
 
 .contact-main{
-    height: calc(100vh - 24rem);
+    height: 100%;
     background-color: #1d4401;
+    padding: 8rem 0;
 }
 
 .form{
