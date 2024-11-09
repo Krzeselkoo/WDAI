@@ -306,6 +306,7 @@ Contact page
 
 */
 
+
 .input-field{
     padding-top: 0;
     padding-left: 0;
@@ -324,7 +325,7 @@ Contact page
 .contact-main{
     height: 100%;
     background-color: #1d4401;
-    padding: 8rem 0;
+    padding: 24rem 0;
 }
 
 .form{
