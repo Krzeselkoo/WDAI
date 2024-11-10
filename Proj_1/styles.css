@@ -18,6 +18,7 @@ body{
     font-size: 2rem;
 }
 
+
 header, section, .two-sections, .header-text-section-container, .contact-main{
     max-width: 260rem;
     margin: 0 auto;
@@ -323,7 +324,7 @@ Contact page
 }
 
 .contact-main{
-    height: 100%;
+    min-height: calc(100vh - 24rem);
     background-color: #1d4401;
     padding: 24rem 0;
 }
