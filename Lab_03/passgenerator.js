@@ -11,6 +11,7 @@ function generate(){
     let specialYes = document.getElementById("special").checked
 
     if(minLen > maxLen){
+        console.log("Tu jestem")
         alert("Max lenght cannot be smaller than Min lenght!")
     }else{
         let lenght = randomIntFromInterval(minLen, maxLen)

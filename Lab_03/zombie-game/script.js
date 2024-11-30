@@ -96,6 +96,9 @@ function shootZombie(event) {
 
 	if (!hit) {
 		score -= 5;
+		if(score < 0){
+			endGame()
+		}
 	}
 }
 

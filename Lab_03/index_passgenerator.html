@@ -8,16 +8,16 @@
 </head>
 <body>
     <div class="generator-wrapper">
-        <form class="generator-form">
+        <form class="generator-form" onsubmit="return generate()">
             <label for="minlen">Minimum password lenght</label>
-            <input type="text" class="textfield" id="minlen" placeholder="Enter a number 8-99" pattern="^([8-9]|[1-9][0-9])$" required/>
+            <input type="text" class="textfield" id="minlen" placeholder="Enter a number 8-99" pattern="^([8-9]|[1-9][0-9])$" required>
             <label for="maxlen" class="margin-top-label">Maximum password lenght</label>
-            <input type="text" class="textfield" id="maxlen" placeholder="Enter a number 8-99" pattern="^([8-9]|[1-9][0-9])$" required/>
+            <input type="text" class="textfield" id="maxlen" placeholder="Enter a number 8-99" pattern="^([8-9]|[1-9][0-9])$" required>
             <label for="capital" class="margin-top-label">Include capital letters?</label>
             <input type="checkbox" class="checkbox" id="capital">
             <label for="special" class="margin-top-label">Include special symbols?</label>
             <input type="checkbox" class="checkbox" id="special">
-            <input type="submit" id="submit-button" value="Generate password" onclick="generate()">
+            <input type="submit" id="submit-button" value="Generate password">
         </form>
     </div>
     <script src="passgenerator.js"></script>
