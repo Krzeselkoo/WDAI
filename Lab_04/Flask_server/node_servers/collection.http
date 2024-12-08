@@ -1,0 +1,79 @@
+@token = {{login.response.body.token}}
+### Get all books
+GET http://localhost:3000/books
+
+### Get book by id
+GET http://localhost:3000/books/5
+
+### Check if book exists by id
+GET http://localhost:3000/bookexists/2
+
+### Add a new book
+POST http://localhost:3000/books
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "year": 1925
+}
+
+###Delete book by id
+DELETE http://localhost:3000/books/3
+Authorization: Bearer {{token}}
+
+###
+###
+###
+
+###Get all user's orders by id
+GET http://localhost:3002/orders/2
+Authorization: Bearer {{token}}
+
+###Add new order
+POST http://localhost:3002/orders
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "userId": 4,
+  "bookId": 5,
+  "quantity": 5
+}
+
+###
+DELETE http://localhost:3002/orders/1
+Authorization: Bearer {{token}}
+
+###
+PATCH http://localhost:3002/orders/6
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "quantity": 5
+}
+
+###
+###
+###
+
+###Register
+POST http://localhost:3001/users/register
+Content-Type: application/json
+
+{
+  "email": "albert",
+  "password": "1222231332"
+}
+
+###Login
+# @name login
+POST http://localhost:3001/users/login
+Content-Type: application/json
+
+{
+  "email": "albert",
+  "password": "1222231332"
+}

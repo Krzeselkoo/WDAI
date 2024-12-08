@@ -4,6 +4,9 @@ GET http://localhost:3000/books
 ### Get book by id
 GET http://localhost:3000/books/4
 
+### Check if book exists by id
+GET http://localhost:3000/bookexists/2
+
 ### Add a new book
 POST http://localhost:3000/books
 Content-Type: application/json
@@ -14,4 +17,4 @@ Content-Type: application/json
   "year": 1925
 }
 ###Delete book by id
-DELETE http://localhost:3000/books/5
+DELETE http://localhost:3000/books/3

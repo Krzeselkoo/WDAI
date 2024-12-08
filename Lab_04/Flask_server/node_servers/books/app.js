@@ -1,16 +1,21 @@
+require('dotenv').config();
+
+const jwt = require('jsonwebtoken');
 const express = require('express');
+const bodyParser = require('body-parser');
 const { Sequelize, DataTypes } = require('sequelize');
 
 const app = express();
 const port = 3000;
 
-// Create a Sequelize instance
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 const sequelize = new Sequelize({
   dialect: 'sqlite',
   storage: 'database.db'
 });
 
-// Define the Book model
 const Book = sequelize.define('Book', {
   bookId: {
     type: DataTypes.INTEGER,
@@ -31,19 +36,27 @@ const Book = sequelize.define('Book', {
   },
 });
 
-// Sync the models with the database
-sequelize.sync()
-  .then(() => {
-    console.log('Database & tables created!');
-  })
-  .catch((error) => {
-    console.error('Unable to connect to the database:', error);
-  });
 
-// Middleware to parse JSON bodies
+sequelize.sync()
+
 app.use(express.json());
 
-// Define a route to get all books
+
+function verifyToken(req, res, next) {
+  const token = req.headers['authorization'];
+  console.log('Token:', token);
+  if (!token) {
+    res.status(401).json({ error: 'Unauthorized: Token not found' });
+  }
+  try {
+    const decoded = jwt.verify(token.split(' ')[1], process.env.PRIVATE_KEY);
+    req.userId = decoded.userId;
+    next();
+  } catch (error) {
+    res.status(401).json({ error: 'Unauthorized: Invalid token' });
+  }
+}
+
 app.get('/books/', async (req, res) => {
   try {
     const books = await Book.findAll();
@@ -53,7 +66,7 @@ app.get('/books/', async (req, res) => {
   }
 });
 
-// Define a route to get a book by id
+
 app.get('/books/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -68,8 +81,22 @@ app.get('/books/:id', async (req, res) => {
   }
 });
 
-// Define a route to create a new book
-app.post('/books', async (req, res) => {
+app.get('/bookexists/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const book = await Book.findByPk(id);
+    if (book) {
+      res.json({exists: true});
+    } else {
+      res.json({exists: false});
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch book' });
+  }
+});
+
+
+app.post('/books', verifyToken, async (req, res) => {
   try {
     const { name, author, year } = req.body;
     const newBook = await Book.create({ name, author, year });
@@ -79,8 +106,7 @@ app.post('/books', async (req, res) => {
   }
 });
 
-// Define a route to delete a book by bookId
-app.delete('/books/:id', async (req, res) => {
+app.delete('/books/:id', verifyToken, async (req, res) => {
   try {
     const deleted = await Book.destroy({ where: { 
       bookId: req.params.id
@@ -96,8 +122,6 @@ app.delete('/books/:id', async (req, res) => {
 });
 
 
-
-// Start the Express server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
