@@ -33,26 +33,26 @@ Authorization: Bearer {{token}}
 
 ###Add new order
 POST http://localhost:3002/orders
-Authorization: Bearer {{token}}
+Authorization: Bearer 
 Content-Type: application/json
 
 {
-  "userId": 4,
-  "bookId": 5,
+  "userId": 10,
+  "bookId": 54534634,
   "quantity": 5
 }
 
-###
+###Delete order
 DELETE http://localhost:3002/orders/1
 Authorization: Bearer {{token}}
 
-###
-PATCH http://localhost:3002/orders/6
+###Change order quantity
+PATCH http://localhost:3002/orders/7
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "quantity": 5
+  "quantity": 4
 }
 
 ###
@@ -64,8 +64,8 @@ POST http://localhost:3001/users/register
 Content-Type: application/json
 
 {
-  "email": "albert",
-  "password": "1222231332"
+  "email": "oooowewoeoweo",
+  "password": "1wrwgwfhbewrherwy"
 }
 
 ###Login
@@ -74,6 +74,6 @@ POST http://localhost:3001/users/login
 Content-Type: application/json
 
 {
-  "email": "albert",
-  "password": "1222231332"
+  "email": "qerqerqerq",
+  "password": "1wrwyweyewy"
 }
