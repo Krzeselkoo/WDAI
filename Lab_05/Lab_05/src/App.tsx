@@ -7,6 +7,7 @@ import Formularz from './components/formularze/Formularz.tsx'
 import Haslo from './components/formularze/Haslo.tsx'
 import Logowanie from './components/formularze/Logowanie.tsx'
 import Ternary from './components/inne/Ternary.tsx'
+import Aktualizacja from './components/inne/Aktualizacja.tsx'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Haslo/>
       <Logowanie/>
       <Ternary/>
+      <Aktualizacja/>
     </>
   )
 }
