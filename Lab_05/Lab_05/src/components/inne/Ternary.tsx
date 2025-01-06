@@ -1,6 +1,6 @@
 function Ternary(){
-    let a = true
-    let b = true
+    const a = true
+    const b = true
 
 
     return (
