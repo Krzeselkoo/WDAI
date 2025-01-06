@@ -1,7 +1,7 @@
 let minutes = 0;
 let seconds = 0;
 let globalnie = null;
-
+let stopped = true;
 
 let timerText = document.querySelector("#time");
 let startButton = document.querySelector("#start");
@@ -37,18 +37,29 @@ function timer() {
 function start(){
     globalnie = setInterval(timer, 1000);
     startButton.disabled = true;
+    stopped = false;
 }
 
 function stop(){
     clearInterval(globalnie);
     startButton.disabled = false;
+    stopped = true;
 }
 
 function reset(){
-    clearInterval(globalnie);
-    startButton.disabled = true;
-    seconds = 0;
-    minutes = 0;
-    timerText.textContent = `0s`;
-    globalnie = setInterval(timer, 1000);
+    if(stopped){
+        seconds = 0;
+        minutes = 0;
+        timerText.textContent = `00s`;
+        startButton.disabled = false;
+    }
+    else{
+        clearInterval(globalnie);
+        startButton.disabled = true;
+        seconds = 0;
+        minutes = 0;
+        timerText.textContent = `00s`;
+        globalnie = setInterval(timer, 1000);
+    }
+    
 }
